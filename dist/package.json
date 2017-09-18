@@ -1,0 +1,13 @@
+{
+  "name": "stocks-vue",
+  "version": "1.0.0",
+  "description": "Stocks Vue",
+  "author": "Kyle.Flavin@gmail.com",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm install express"
+  },
+  "dependencies": {
+    "express": "4.15.4"
+  }
+}
