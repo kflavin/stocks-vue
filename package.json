@@ -1,7 +1,7 @@
 {
   "name": "stocks-vue",
   "version": "1.0.0",
-  "description": "Stocks web UI in Vuejs",
+  "description": "Stocks web UI in Vuejs test",
   "author": "Kyle <Kyle.Flavin@gmail.com>",
   "private": true,
   "scripts": {
