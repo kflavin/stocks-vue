@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <main>
-      <v-card class="grey lighten-3 elevation-10">
+      <v-card class="grey lighten-4 elevation-10">
           <v-card-text>
             <v-container>
               <h5>Register</h5>
@@ -12,7 +12,7 @@
                 <v-flex xs4>
                   <v-text-field
                     name="Email"
-                    label="Enter your email address or username"
+                    label="Enter your email address"
                     id="Email"
                     v-model="user.email"
                     @keyup.native.enter="register"
@@ -54,7 +54,7 @@
           </v-layout>
             </v-container>
           </v-card-text>
-        </v-card>
+      </v-card>
   </main>
   </v-app>
 
@@ -81,7 +81,7 @@
             return;
           }
 
-          this.$http.post("/api/2.0/auth/register", this.user)
+          this.$http.post("/auth/register", this.user)
             .then(function(res) {
                 // send a success message, then redirect to the login page
                 alertify.success("You have registered.  Please login.");
