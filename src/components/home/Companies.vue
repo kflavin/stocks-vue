@@ -18,7 +18,16 @@
         id="details"
       >
         <v-card>
-          <v-card-text>details</v-card-text>
+          <v-card-text>
+            <div>
+              <h5>Details</h5>
+              <p>
+                <b>Industry:</b> {{industry}}<br />
+                <b>Sector:</b> {{sector}}
+              </p>
+            </div>
+
+          </v-card-text>
         </v-card>
       </v-tabs-content>
       <v-tabs-content
@@ -27,15 +36,14 @@
       >
         <v-card>
           <v-card-text>
-            ROE: {{indicators.roe}} <br />
-            EV/EBITDA: {{indicators.ev2ebitda}} <br />
-            Free Cash Flow: {{indicators.fcf}} <br />
-            <br />Cleaned versions<br />
-            ROE: {{roeClean}} <br />
-            EV/EBITDA: {{ev2ebitdaClean}} <br />
-            Free Cash Flow: {{fcfClean}} <br />
-
-
+            <div>
+              <h5>Fundamentals</h5>
+              <p>
+                <b>Return on Equity (ROE):</b> {{roeClean}} <br />
+                <b>Enterprise Value to EBITDA</b> (EV/EBITDA): {{ev2ebitdaClean}} <br />
+                <b>Free Cash Flow (FCF):</b> {{fcfClean}} <br />
+              </p>
+            </div>
           </v-card-text>
         </v-card>
       </v-tabs-content>
@@ -45,7 +53,19 @@
       >
         <v-card>
           <v-card-text>
-          <a :href="'https://whalewisdom.com/stock/'+this.symbol">Whale Wisdom</a>
+          <div>
+            <h5>Guidance for Your Journey</h5>
+            <p>
+              <a :href="'https://whalewisdom.com/stock/'+this.symbol">Whale Wisdom</a>:
+              See where the big dogs eat.<br />
+              <a :href="`https://seekingalpha.com/symbol/${this.symbol}?s=${this.symbol}`">Seeking Alpha</a>:
+              Analysis from randos.<br />
+              <a :href="`https://www.zacks.com/stock/quote/${this.symbol}?q=${this.symbol}`">Zacks</a>:
+              Close your eyes and trust our model!<br />
+              <a :href="`http://beta.morningstar.com/stocks/xnas/${this.symbol}/quote.html`">Morningstar</a>:
+              "The sun is but a morning star."<br />
+            </p>
+          </div>
           </v-card-text>
         </v-card>
       </v-tabs-content>
@@ -54,7 +74,9 @@
         id="news"
       >
         <v-card>
-          <v-card-text>Items in the news</v-card-text>
+          <v-card-text>
+
+          </v-card-text>
         </v-card>
       </v-tabs-content>
     </v-tabs>

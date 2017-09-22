@@ -2,7 +2,7 @@
   <v-container fluid>
   <v-layout>
     <v-flex xs12 offset-xs2>
-    <h4>Full Company Listings</h4>
+    <h4>Company Listings</h4>
   </v-flex>
   </v-layout>
     <v-layout>
