@@ -57,7 +57,7 @@
             <h5>Guidance for Your Journey</h5>
             <p>
               <a :href="'https://whalewisdom.com/stock/'+this.symbol">Whale Wisdom</a>:
-              See where the big dogs eat.<br />
+              Where the big dogs eat.<br />
               <a :href="`https://seekingalpha.com/symbol/${this.symbol}?s=${this.symbol}`">Seeking Alpha</a>:
               Analysis from randos.<br />
               <a :href="`https://www.zacks.com/stock/quote/${this.symbol}?q=${this.symbol}`">Zacks</a>:

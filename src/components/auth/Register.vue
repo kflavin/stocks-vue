@@ -63,6 +63,7 @@
 </template>
 
 <script>
+
   export default {
     name: "register",
     data: function() {
@@ -76,16 +77,32 @@
     },
     methods: {
         register: function() {
+          var validEmailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+          // Password must be between 6 and 20 characters, with one digit, one uppercase letter, and one lowercase letter.
+//          var validPasswordFormat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/;
+
+          if (!this.user.email.match(validEmailFormat)) {
+            alertify.error("Invalid email address!");
+            return;
+          }
+
           if (this.user.password !== this.password2) {
             alertify.error("Passwords do not match!");
             return;
           }
 
+//          if (!this.user.email.match(validPasswordFormat)) {
+//            alertify.error("Password must contain between 6 and 20 characters, one digit, one uppercase letter, and one lowercase letter.");
+//            return;
+//          }
+
           this.$http.post("/auth/register", this.user)
             .then(function(res) {
                 // send a success message, then redirect to the login page
-                alertify.success("You have registered.  Please login.");
+                alertify.success("You have registered.  Please check your email address for confirmation.");
                 this.$router.push('/auth/login');
+
             }); // catch block is handled in main.js as an interceptor
         }
     }

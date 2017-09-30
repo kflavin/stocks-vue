@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuetify from 'vuetify'
+import VueConfig from 'vue-config' // not using this, remove
 import App from './App'
 import Router from './routes.js'  // default exports can be imported with any name
 import VueResource from 'vue-resource'

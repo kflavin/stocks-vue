@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Login from './components/auth/Login.vue';
 import Auth from './components/auth/Auth.vue';
 import Register from './components/auth/Register.vue';
+import Confirm from './components/auth/Confirm.vue';
 import Home from './components/home/Home.vue';
 import Welcome from './components/home/Welcome.vue';
 import Listings from './components/home/Listings.vue';
@@ -30,6 +31,11 @@ var router = new VueRouter({
           path: "register",
           component: Register,
           meta: { requiresGuest: true }
+        },
+        {
+          path: "confirm/:id",
+          component: Confirm,
+          meta: {requiresGuest: true}
         }
       ]
     },
