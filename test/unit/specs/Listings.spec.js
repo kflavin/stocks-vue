@@ -10,6 +10,6 @@ function getRenderedText (Component, propsData) {
 describe('Listings.vue', () => {
   it('renders content correctly', () => {
     console.log(getRenderedText(Listings))
-    expect(getRenderedText(Listings)).to.equal("Listings")
+    expect(getRenderedText(Listings)).to.include("Company Listings")
   });
 });

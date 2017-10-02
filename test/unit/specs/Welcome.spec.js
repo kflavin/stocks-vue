@@ -10,6 +10,6 @@ function getRenderedText (Component, propsData) {
 describe('Welcome.vue', () => {
   it('renders content correctly', () => {
     console.log(getRenderedText(Welcome));
-    expect(getRenderedText(Welcome)).to.equal("This is the welcome page!  Hello.");
+    expect(getRenderedText(Welcome)).to.equal("Home Let's buy some penny stocks!");
   });
 });
