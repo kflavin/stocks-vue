@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 class="ml-3 mt-3">{{this.companyName}} ({{this.symbol}})</h4>
+    <h4 class="ml-3 mt-3">{{this.companyName}} ({{this.symbol}}) <v-icon large @click="liked" color="blue darken-2">{{favorite ? "favorite":"favorite_border"}}</v-icon></h4>
     <v-tabs dark v-model="active">
       <v-tabs-bar slot="activators" class="blue lighten-3">
         <v-tabs-item
@@ -105,6 +105,7 @@
                 {item: '2', title: "Indicators", router: "indicators"},
                 {item: '3', title: "Research", router: "research"},
                 {item: '4', title: "In the News", router: "news"}],
+        favorite: false
         // tabs: ["details", "indicators", "news"],
         // tabData: {
         //   details: {
@@ -165,6 +166,9 @@
       }
     },
     methods: {
+      liked: function() {
+        this.favorite = !this.favorite;
+      },
       getCompany: function(symbol) {
         console.log("getting company " + symbol)
         this.$http.get('/company/' + symbol).then(function(res) {

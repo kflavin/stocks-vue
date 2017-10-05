@@ -3,7 +3,7 @@
     <v-layout>
       <h4>Home</h4>
     </v-layout>
-    <v-layout
+    <v-layout>
       <p>Let's buy some penny stocks!</p>
     </v-layout>
   </v-container>
