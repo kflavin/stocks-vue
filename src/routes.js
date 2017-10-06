@@ -11,6 +11,7 @@ import Listings from './components/home/Listings.vue';
 import Companies from './components/home/Companies.vue';
 import Messages from './components/home/Messages.vue';
 import Tab1 from './components/home/Tab1.vue';
+import MyCompanies from './components/home/MyCompanies.vue';
 
 Vue.use(VueRouter);
 
@@ -54,9 +55,14 @@ var router = new VueRouter({
           component: Listings,
           meta: { requiresAuth: true }
         },
+        // {
+        //   path: "companies",
+        //   redirect: '/listings'
+        // },
         {
           path: "companies",
-          redirect: '/listings'
+          component: MyCompanies,
+          meta: {requiresAuth: true},
         },
         {
           path: "company/:symbol",

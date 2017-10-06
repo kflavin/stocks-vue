@@ -88,7 +88,6 @@
     name: "companies",
     created: function() {
       this.getCompany(this.$route.params.symbol);
-      // this.getIndicators(this.id);
     },
     data: function() {
       return {
@@ -106,22 +105,6 @@
                 {item: '3', title: "Research", router: "research"},
                 {item: '4', title: "In the News", router: "news"}],
         favorite: false
-        // tabs: ["details", "indicators", "news"],
-        // tabData: {
-        //   details: {
-        //     title: "Company details",
-        //     href: "details"
-        //   },
-        //   indicators: {
-        //     title: "Indicators",
-        //     href: "indicators"
-        //   },
-        //   details: {
-        //     title: "In the News",
-        //     href: "news"
-        //   }
-        // },
-        // active: null
       }
     },
     computed: {
@@ -168,24 +151,24 @@
     methods: {
       liked: function() {
         this.favorite = !this.favorite;
+
+        if (this.favorite) {
+            this.$http.post("/user/like", {'like': "true", 'symbol': this.symbol}).then(function(res) {
+          });
+        } else {
+            this.$http.post("/user/like", {'like': "false", 'symbol': this.symbol}).then(function(res) {
+          });
+        }
       },
       getCompany: function(symbol) {
-        console.log("getting company " + symbol)
-        this.$http.get('/company/' + symbol).then(function(res) {
-          console.log(res.body);
+        this.$http.get('/user/company/' + symbol).then(function(res) {
           this.companyName = res.body.name;
           this.symbol = res.body.symbol;
           this.sector = res.body.sector;
           this.industry = res.body.industry;
           this.id = res.body.id;
+          this.favorite = res.body.favorite;
         });
-      },
-      getIndicators: function(companyId) {
-        console.log("getting indicators " + id);
-        this.$http.get('/indicators/' + id).then(function(res) {
-          console.log(res.body);
-
-        })
       },
       next: function() {
         console.log("actives");

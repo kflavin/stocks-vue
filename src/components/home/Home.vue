@@ -62,7 +62,7 @@ export default {
         items: [
           { icon: 'home', title: 'Home', url:'/welcome'  },
           { icon: 'view_list', title: 'Listings', url: '/listings' },
-          { icon: 'work', title: 'Companies', url: '/companies' },
+          { icon: 'work', title: 'My Companies', url: '/companies' },
           { icon: 'message', title: 'Messages', url: '/messages' },
           { icon: 'close', title: 'Logout', url: '/messages' },
         ],
